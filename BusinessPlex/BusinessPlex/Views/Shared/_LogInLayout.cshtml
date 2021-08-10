@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title - Business Plex</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="~/Content/page-loading.css" rel="stylesheet" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="se-pre-con"></div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                @Html.ActionLink("Business Plex", "Index", "User", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active">@Html.ActionLink("Home", "Index", "User", new { area = "" }, new { @class = "" })</li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Setup <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Category", "Show", "Category", new { area = "" }, new { @class = "" })</li>
+                        <li>@Html.ActionLink("Product", "Show", "Product", new { area = "" }, new { @class = "" })</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Party <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Customer", "Show", "Customer", new { area = "" }, new { @class = "" })</li>
+                        <li>@Html.ActionLink("Supplier", "Show", "Supplier", new { area = "" }, new { @class = "" })</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Operation <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Purchase", "Entry", "Purchase", new { area = "" }, new { @class = "" })</li>
+                        <li>@Html.ActionLink("Stock", "Search", "Stock", new { area = "" }, new { @class = "" })</li>
+                        <li>@Html.ActionLink("Sales", "Entry", "Sales", new { area = "" }, new { @class = "" })</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Report <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Purchase Report", "PeriodicIncomeExpenseOnPurchase", "Reporting", new { area = "" }, new { @class = "" })</li>
+                        <li>@Html.ActionLink("Sales Report", "PeriodictIncomeReport", "Reporting", new { area = "" }, new { @class = "" })</li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>
+                &copy; @DateTime.Now.Year - Business Plex | Developed by
+                <a href="" class="text-white"> Team RAM.</a>
+            </p>
+        </footer>
+    </div>
+
+    
+    <!-- js -->
+    <script src="~/Scripts/loading/jquery-2.2.3.min.js"></script>
+    <!-- loading-gif js -->
+    
+    <script>
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+    <!--// loading-gif js -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
